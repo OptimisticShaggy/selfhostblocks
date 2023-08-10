@@ -27,7 +27,7 @@ services. Also, the design will be extendable to allow users to add services not
 - [X] Nextcloud
   - [ ] Export metrics to Prometheus.
   - [X] LDAP auth, unfortunately we need to configure this manually.
-  - [ ] SSO auth.
+  - [!] SSO auth. (wip)
   - [X] Backup support.
 - [X] Home Assistant.
   - [ ] Export metrics to Prometheus.
