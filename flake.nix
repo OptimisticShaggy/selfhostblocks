@@ -23,5 +23,16 @@
     };
 
     # templates.default = {};  Would be nice to have a template
+
+    # Follows https://blog.thalheim.io/2023/01/08/how-to-use-nixos-testing-framework-with-flakes/
+    checks = nixpkgs.lib.genAttrs [ "x86_64-linux" ] (system:
+      let
+        checkArgs = {
+          pkgs = nixpkgs.legacyPackages.${system};
+          inherit self;
+        };
+      in {
+        ssl = import ./tests/ssl.nix checkArgs;
+      });
   };
 }
